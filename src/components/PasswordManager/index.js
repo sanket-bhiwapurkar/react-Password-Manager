@@ -32,7 +32,8 @@ class PassWordManager extends Component {
     this.setState({searchInput: event.target.value})
   }
 
-  onAdd = () => {
+  onAdd = event => {
+    event.preventDefault()
     const {website, username, password} = this.state
     const newPassword = {
       id: uuidv4(),
@@ -82,13 +83,11 @@ class PassWordManager extends Component {
           className="logo"
         />
         <div className="new-password-window">
-          {window.innerWidth < 768 && (
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/password-manager-sm-img.png"
-              alt="password manager"
-              className="password-manager"
-            />
-          )}
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/password-manager-sm-img.png"
+            alt="password manager"
+            className="password-manager-mobile"
+          />
 
           <form className="add-password-card">
             <h1 className="main-heading">Add New Password</h1>
@@ -146,13 +145,12 @@ class PassWordManager extends Component {
               Add
             </button>
           </form>
-          {window.innerWidth >= 768 && (
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/password-manager-lg-img.png "
-              alt="password manager"
-              className="password-manager"
-            />
-          )}
+
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/password-manager-lg-img.png "
+            alt="password manager"
+            className="password-manager-desktop"
+          />
         </div>
 
         <div className="your-passwords-window">

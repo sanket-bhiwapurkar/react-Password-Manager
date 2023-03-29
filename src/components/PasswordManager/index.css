@@ -3,9 +3,28 @@
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.password-manager {
+.password-manager-mobile {
   width: 100%;
+  max-width: 400px;
+}
+
+.password-manager-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .password-manager-mobile {
+    display: none;
+  }
+  .password-manager-desktop {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+  }
 }
 .add-password-card {
   background-color: #454f84;
@@ -13,6 +32,7 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .main-heading {
   color: #f8fafc;
@@ -128,6 +148,7 @@
 @media screen and (min-width: 768px) {
   .new-password-window {
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding: 40px;
   }
